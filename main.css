@@ -1,5 +1,57 @@
+body {
+  background-image: url("https://media.istockphoto.com/id/516378717/vector/lit-wooden-background.jpg?s=612x612&w=0&k=20&c=dQoWKVzKwbbkAKQup5K1IFWCsQ0Kygx5pgrfyrTiwFw=");
+  background-color: black;
+}
 
-#cardSection {
+h1 {
+  /* color: white; */
+  text-align: left;
+  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-size: 100px;
+  background: #FFFFFF;
+  background: linear-gradient(to right, #FFFFFF 44%, #A88CBA 100%);
+  opacity: 0.65;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 200px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.card-body {
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  font-size: 20px;
+  opacity: 0.75;
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: 10px
+}
+
+img {
+-webkit-border-radius: 1px;
+border-radius: 1px;
+background: #5f5e5e;
+-webkit-box-shadow: 5px 5px 80px #5e5d5d, -5px -5px 20px #605f5f;
+box-shadow: 5px 5px 20px #5e5d5d, -5px -5px 10px #605f5f;
+opacity: 0.8;
+}
+
+
+#cardSection, #app {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 33.3333%;
@@ -7,39 +59,83 @@
 }
 
 #cards {
-  -webkit-border-radius: 9px;
-  border-radius: 9px;
-  background: #9ac5d4;
-  -webkit-box-shadow: 7px 7px 14px #6c8a94, -7px -7px 14px #c8ffff;
-  box-shadow: 7px 7px 14px #6c8a94, -7px -7px 14px #c8ffff;
+  font-family: 'Noto Sans Cypro Minoan', sans-serif;
+  background: rgba( 255, 255, 255, 0.5 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 2px );
+  -webkit-backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   margin-top: 30px;
 }
 
 .card-title {
+  color: rgb(14, 12, 8)
   border: 1px solid lightblue;
-  text-align: center;
+  text-align: right;
 }
 
 img {
-  margin: auto;
   object-fit: cover;
   height: 250px;
 }
 
+#descr {
+  height: 45px;
+}
+
 #description {
   text-align: justify;
+  margin-top: 10px;
+  font-size: 15px;
+  margin-left: 8px;
+}
+
+h3 {
+  text-align: center;
+  opacity: 0.75;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #info1, #info2 {
   font-weight: bold;
+  line-height: 80%;
+}
+
+#info1 > p, footer, #info2 > p {
+  color: white;
+  opacity: 0.8;
+  font-size: 14px;
+  margin-left: 8px;
 }
 
 #available {
   width: 100%;
-  background-color: darkgray;
+  background-color: #376387;
   color: yellow;
+  opacity: 0.65;
+  padding: 0px;
+  margin: 0px;
+  font-style: italic;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#buy {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
 
 .btn-primary {
-  background-color: #A72CBE;
+  background-color: #376387;
+  opacity: 0.9;
+ 
+}
+
+.btn-primary:hover {
+  background-color: darkgoldenrod;
 }
