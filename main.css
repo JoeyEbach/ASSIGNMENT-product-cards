@@ -5,7 +5,7 @@ body {
 
 h1 {
   /* color: white; */
-  text-align: left;
+  text-align: center;
   font-family: 'Fira Sans', sans-serif;
   font-family: 'Oswald', sans-serif;
   font-size: 100px;
@@ -15,7 +15,6 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: 200px;
-  margin-left: 10px;
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
@@ -54,8 +53,10 @@ opacity: 0.8;
 #cardSection, #app {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 33.3333%;
+  /* flex-basis: 33.3333%; */
   justify-content: space-around;
+  max-width: 1000px;
+  margin: auto;
 }
 
 #cards {
