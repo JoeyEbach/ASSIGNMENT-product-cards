@@ -102,7 +102,7 @@ const cardsOnDom = (array) => {
         <div id="descr">
           <p id="description" class="card-text">${guitar.description}</p>
         </div>
-          <p id="available">${guitar.available ? "Available" : "Not Available"}</p>
+          <p id="checkBox">${guitar.available ? "Available" : "Not Available"}</p>
       </section>
       <section id="info1">
         <header>
@@ -133,8 +133,104 @@ const cardsOnDom = (array) => {
 
 }
 
+const form = () => {
+  let domString = '';
+
+   domString += `
+    <div class="mb-3">
+      <label for="name" class="form-label"></label>
+      <input type="text" placeholder="Name" class="form-control" id="name" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="img" class="form-label"></label>
+      <input type="Url" placeholder="Img Url" class="form-control" id="img" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label"></label>
+      <input type="text" placeholder="Description" class="form-control" id="description" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="available">
+      <label class="form-check-label" for="available">Available</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="size" class="form-label"></label>
+      <input type="text" placeholder="Size" class="form-control" id="size" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="weight" class="form-label"></label>
+      <input type="text" placeholder="Weight" class="form-control" id="weight" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+    <label for="invalid" class="form-label"></label>
+    <input type="text" placeholder="Offer Invalid" class="form-control" id="invalid" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+    <label for="price" class="form-label"></label>
+    <input type="text" placeholder="Price" class="form-control" id="price" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+    <label for="offer1" class="form-label"></label>
+    <input type="text" placeholder="Offer 1" class="form-control" id="offer1" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+    <label for="offer2" class="form-label"></label>
+    <input type="text" placeholder="Offer 2" class="form-control" id="offer2" aria-describedby="emailHelp">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+   ` 
+   renderToDom('#sellForm', domString)
+}
+
+const sell = document.querySelector("#sellBtn");
+const frm = document.querySelector("#sellForm")
+
+const createGuitar = (e) => {
+  e.preventDefault();
+
+  const newGuitar = {
+    id: guitars.length + 1,
+    name: document.querySelector('#name').value,
+    img: document.querySelector('#img').value,
+    description: document.querySelector('#description').value,
+    available: document.querySelector('#available').checked,
+    size: document.querySelector('#size').value,
+    weight: document.querySelector('#weight').value,
+    invalid: document.querySelector('#invalid').value,
+    price: document.querySelector('#price').value,
+    offer1: document.querySelector('#offer1').value,
+    offer2: document.querySelector('#offer2').value
+  }
+   
+    guitars.push(newGuitar);
+    cardsOnDom(guitars);
+    form.reset();
+
+  }
+
+const eventListeners = () => {
+  sell.addEventListener('click', () => {
+    form();
+  })
+
+  frm.addEventListener('submit', createGuitar);
+
+}
+
+
 const startApp = () => {
   cardsOnDom(guitars);
+  eventListeners();
 
 };
 
